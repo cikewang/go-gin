@@ -1,9 +1,9 @@
-package library
+package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-gin/service/admin"
-	"go-gin/service/front"
+	"go-gin/controller/admin"
+	"go-gin/controller/front"
 )
 
 func Router() *gin.Engine {
@@ -25,7 +25,8 @@ func Router() *gin.Engine {
 	// 后台管理路由
 	adminGroup := r.Group("/admin")
 	{
-		adminGroup.GET("/index", admin.Index)
+		adminGroup.GET("/page", admin.Index)
+		adminGroup.GET("/admin", admin.GetAdminInfo)
 	}
 
 	return r

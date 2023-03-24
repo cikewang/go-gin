@@ -8,18 +8,18 @@ import (
 
 func Index(c *gin.Context) {
 
-	fmt.Println("front index")
+	fmt.Println("userService index")
 
 	c.JSON(200, gin.H{
-		"message": "hello front index",
+		"message": "hello userService index",
 	})
 }
 
 func IndexPage(c *gin.Context) {
 
-	fmt.Println("front IndexPage")
+	fmt.Println("userService IndexPage")
 
 	c.HTML(http.StatusOK, "frontIndex.html", gin.H{
-		"title": "admin website",
+		"title": "adminService website",
 	})
 }
